@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1 style ="color:pink;"> Array</h1>
+    <script>
+      var coworkers=["uni","uni2"];
+      document.write(coworkers);
+    </script>
+    <h1>get</h1>
+    <script>
+      document.write(coworkers[0]);
+    </script>
+    <h1>add</h1>
+    <script>
+      coworkers.push('uni3');
+      document.write(coworkers);
+    </script>
+    <h1>count</h1>
+    <script>
+      document.write(coworkers.length);
+    </script>
+
+    <h1 style ="color:pink;"> Loop</h1>
+    <script>
+      var i = 0;
+      while (i<3){
+        document.write('<li>'+i+'</li>');
+        i=i+1;
+      }
+    </script>
+
+    <h1 style ="color:pink;"> Loop & Array</h1>
+    <script>
+      var coworkers=['uni1','uni2','uni3'];
+    </script>
+    <h2>coworkers</h2>
+    <ul>
+      <script>
+        var i=0;
+        while (i< coworkers.length){
+          document.write('<li><a href="http://a.com/'+ coworkers[i]+'">' + coworkers[i] + '</a></li>');
+          i=i+1;
+        }
+      </script>
+    </ul>
+
+    <h1 style ="color:pink;"> Object & Create</h1>
+    <script>
+      var coworkers={
+        'name':'uni',
+        'age':'24'
+      };
+      document.write('name : ' + coworkers.name + "<br>");
+      document.write('age : ' + coworkers.age + "<br>");
+      coworkers.gender= 'female';
+      document.write('gender : ' + coworkers.gender + "<br>");
+      coworkers['sister'] = 'yujin';
+      document.write('sister : ' + coworkers['sister'] + "<br>");
+
+    </script>
+    <h2>Iterate</h2>
+    <script>
+      for (var key in coworkers){
+        document.write(key+'->'+coworkers[key]+"<br>")
+      }
+
+    </script>
+
+    <h2>Property & Method</h2>
+    <h4>property : 객체에 소속된 변수 / method : 객체에 소속된 함수 </h4>
+    <script>
+
+      coworkers.showAll = function() {
+        for (var key in this){
+          document.write(key+'->'+coworkers[key]+"<br>")
+        }
+      }
+      coworkers.showAll();
+
+    </script>
+
+  </body>
+</html>
