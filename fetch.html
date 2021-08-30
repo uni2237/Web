@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <article>
+
+    </article>
+    <input type="button" value="fetch" onclick="
+    /*
+      fetch('weekly').then(function(response){
+        response.text().then(function(text){
+          document.querySelector('article').innerHTML=text;
+        })
+      })
+      */
+
+      /*
+      function callbackme(){
+        console.log('response end');
+      }
+      fetch('monthly').then(callbackme);
+      console.log(1);
+      console.log(2); // 1,2가 콘솔에 먼저 출력 된 후(아직 서버 응답 중) resonse end가 출력됨(서버 응답 끝남)
+    */
+
+    //Asyncronous
+    fetch('monthly').then(function(response){
+      response.text().then(function(text){
+        document.querySelector('article').innerHTML=text;
+      })
+    });
+    ">
+  </body>
+</html>
+
+<!--
+fetch('javascript') : 웹 브라우져야, javascript 라는 파일을 서버에게 요청해줘 -> 서버가 응답해줌.
+.then : fetch야 응답이 끝나면 함수를 실행시켜줘
+ 비동기적 실행이므로 fetch가 실행 중 일때 다른 코드들 실행됨 (병렬적)-->
